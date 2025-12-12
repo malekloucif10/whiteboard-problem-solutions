@@ -1,9 +1,8 @@
-"""
-Author: Mohamed Malek Loucif
-Date: 2025-12-05
-Lab: Section D
-Description: Implements four versions of the classic Two Sum problem:
-"""
+# Author: Mohamed Malek Loucif
+# Date: 2025-12-05
+# Lab Section: D
+# Description: Implements four versions of the classic Two Sum problem:
+
 
 from typing import List, Tuple
 
