@@ -1,14 +1,12 @@
 # Author: Mohamed Malek Loucif
 # Date: 2025-12-05
 # Lab Section: D
-# Description: Implements four versions of the classic Two Sum problem:
+# Description: Implements four versions of the classic Two Sum problem.
+
+from typing import List, Tuple, Optional
 
 
-from typing import List, Tuple
-
-
-def twoSumLoops(nums: List[int], target: int) -> Tuple[int, int] | None:
-   
+def twoSumLoops(nums: List[int], target: int) -> Optional[Tuple[int, int]]:
     n = len(nums)
     for i in range(n):
         for j in range(i + 1, n):
@@ -17,22 +15,19 @@ def twoSumLoops(nums: List[int], target: int) -> Tuple[int, int] | None:
     return None
 
 
-def twoSumDict(nums: List[int], target: int) -> Tuple[int, int] | None:
-   
-    seen: dict[int, int] = {}
+def twoSumDict(nums: List[int], target: int) -> Optional[Tuple[int, int]]:
+    seen = {}
     for j, value in enumerate(nums):
         complement = target - value
         if complement in seen:
-            i = seen[complement]
-            return i, j
+            return seen[complement], j
         seen[value] = j
     return None
 
 
 def twoSumLoopsAll(nums: List[int], target: int) -> List[List[int]]:
-    
     n = len(nums)
-    result: List[List[int]] = []
+    result = []
     for i in range(n):
         for j in range(i + 1, n):
             if nums[i] + nums[j] == target:
@@ -41,9 +36,8 @@ def twoSumLoopsAll(nums: List[int], target: int) -> List[List[int]]:
 
 
 def twoSumDictAll(nums: List[int], target: int) -> List[List[int]]:
-   
-    result: List[List[int]] = []
-    seen_indices: dict[int, List[int]] = {}
+    result = []
+    seen_indices = {}
 
     for j, value in enumerate(nums):
         complement = target - value
